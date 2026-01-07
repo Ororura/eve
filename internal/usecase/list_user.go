@@ -2,14 +2,14 @@ package usecase
 
 import "eve/domain"
 
-type CreateUserUseCase struct {
+type GetUserUseCase struct {
 	repo UserRepository
 }
 
-func NewCreateUserUseCase(r UserRepository) *CreateUserUseCase {
-	return &CreateUserUseCase{repo: r}
+func NewGetUserUseCase(r UserRepository) *GetUserUseCase {
+	return &GetUserUseCase{repo: r}
 }
 
-func (cu *CreateUserUseCase) Execute() ([]domain.User, error) {
+func (cu *GetUserUseCase) Execute() ([]domain.User, error) {
 	return cu.repo.GetAll()
 }
