@@ -10,13 +10,13 @@ type UserRepo struct {
 	db *sqlx.DB
 }
 
+func NewUserRepo(db *sqlx.DB) *UserRepo {
+	return &UserRepo{db}
+}
+
 func (u *UserRepo) Save(user domain.User) error {
 	_, err := u.db.Exec("INSERT INTO users (email, password) VALUES ($1, $2)", user.Email, user.Password)
 	return err
-}
-
-func NewUserRepo(db *sqlx.DB) *UserRepo {
-	return &UserRepo{db}
 }
 
 func (u *UserRepo) GetAll() ([]domain.User, error) {
