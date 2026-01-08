@@ -3,6 +3,6 @@ package domain
 type User struct {
 	ID        int    `db:"id" json:"id"`
 	Email     string `db:"email" json:"email"`
-	Password  string `db:"password" json:"-"`
+	Password  string `db:"password" json:"password"`
 	CreatedAt string `db:"created_at" json:"created_at"`
 }

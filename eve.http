@@ -1,0 +1,11 @@
+### GET request to example server
+GET http://localhost:8080/user
+
+###
+POST http://localhost:8080/user
+Content-Type: application/json
+
+{
+  "email": "email@mail.ru",
+  "password": "asjdhashkjdahd"
+}
