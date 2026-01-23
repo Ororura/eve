@@ -112,7 +112,7 @@ func (h *ReviewHandler) GetReview(c echo.Context) error {
 		return c.JSON(http.StatusInternalServerError, map[string]string{"error": err.Error()})
 	}
 
-	return c.JSON(http.StatusOK, map[string]interface{}{
+	return c.JSON(http.StatusOK, map[string]any{
 		"review":   review,
 		"comments": comments,
 	})
